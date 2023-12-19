@@ -186,7 +186,7 @@ for (let i = 0; i < allMusic.length; i++) {
                   <p>${allMusic[i].artist}</p>
                 </div>
                 <span id="${allMusic[i].src}" class="audio-duration">3:40</span>
-                <audio class="${allMusic[i].src}" src="songs/${allMusic[i].src}.mp3"></audio>
+                <audio class="${allMusic[i].src}" src="static/songs/${allMusic[i].src}.mp3"></audio>
               </li>`;
   ulTag.insertAdjacentHTML("beforeend", liTag); //inserting the li inside ul tag
 
@@ -223,7 +223,9 @@ function playingSong(){
       audioTag.innerText = "Playing";
     }
 
-    allLiTag[j].setAttribute("onclick", "clicked(this)");
+    allLiTag[j].addEventListener("click", function() {
+      clicked(this);
+    });
   }
 }
 

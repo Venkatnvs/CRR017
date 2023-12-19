@@ -3,7 +3,7 @@ let allMusic = [
       name: "Harley Bird - Home",
       artist: "Jordan Schor",
       img: "music-1",
-      src: "Beat It.mp3"
+      src: "musicplayer/staticfiles/songs/Beat It.mp3"
     },
     {
       name: "Ikson Anywhere – Ikson",

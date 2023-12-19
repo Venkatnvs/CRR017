@@ -1,5 +1,5 @@
 Music Player
 
-[![Watch the video](Demo.mp4)
+[![Watch the video](image.png)](video_file.mp4)
 <br/>
 [Watch now](Demo.mp4)

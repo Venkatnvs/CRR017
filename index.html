@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player Dashboard</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(92, 92, 163, 0.463);
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      font-size: 1.5em;
+    }
+
+    main {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 2em;
+    }
+
+    .music-player {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 2em;
+      border-radius: 10px;
+      width: 45%;
+      max-width: 400px;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    #album-cover {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1em;
+    }
+
+    #song-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    #artist {
+      color: #555;
+      margin-bottom: 1em;
+    }
+
+    #progress-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #eee;
+      border-radius: 5px;
+      margin-bottom: 1em;
+      overflow: hidden;
+    }
+
+    #progress {
+      width: 50%;
+      height: 100%;
+      background-color: #4caf50;
+      border-radius: 5px;
+    }
+
+    #controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #playlist {
+      width: 45%;
+      max-width: 400px;
+    }
+
+    #playlist-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    #song-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .song-item {
+      margin-bottom: 0.5em;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    Music Player Dashboard
+  </header>
+
+  <main>
+    <div class="music-player">
+      <img id="album-cover" src="al.jpeg" alt="Album Cover">
+      <div id="song-title">Song Title</div>
+      <div id="artist">Artist Name</div>
+      <div id="progress-bar">
+        <div id="progress"></div>
+      </div>
+      <div id="controls">
+        <button id="prev-btn">Previous</button>
+        <button id="play-pause-btn">Play</button>
+        <button id="next-btn">Next</button>
+      </div>
+    </div>
+
+    <div id="playlist" class="music-player">
+      <div id="playlist-title">Playlist</div>
+      <ul id="song-list">
+        <!-- Song items will be dynamically added here using JavaScript -->
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    © 2023 Your Music Player. All rights reserved.
+  </footer>
+
+  <script>
+    // JavaScript code for adding songs to the playlist dynamically
+    document.addEventListener("DOMContentLoaded", function () {
+      const playlist = document.getElementById("song-list");
+
+      // Sample songs, you can replace them with your own data
+      const songs = [
+        { title: "Song 1", artist: "Artist 1" },
+        { title: "Song 2", artist: "Artist 2" },
+        { title: "Song 3", artist: "Artist 3" },
+        { title: "Song 4", artist: "Artist 4" },
+        { title: "Song 5", artist: "Artist 5" },
+        { title: "Song 6", artist: "Artist 6" },
+        { title: "Song 7", artist: "Artist 7" },
+        { title: "Song 8", artist: "Artist 8" },
+        { title: "Song 9", artist: "Artist 9" },
+        { title: "Song 10", artist: "Artist 10" },
+      ];
+
+      // Populate the playlist with songs
+      songs.forEach((song, index) => {
+        const listItem = document.createElement("li");
+        listItem.className = "song-item";
+        listItem.textContent = `${index + 1}. ${song.title} - ${song.artist}`;
+        playlist.appendChild(listItem);
+      });
+    });
+  </script>
+
+</body>
+</html>

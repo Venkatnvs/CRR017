@@ -59,5 +59,4 @@ let allMusic = [
         img: "music-6",
         src: "musicplayer/staticfiles/songs/WeWillRockYou.mp3"
       },
-
   ];
